@@ -60,7 +60,7 @@
                 
                 <div class="text-right mt-4">
                   <label class="text-muted font-weight-normal m-0">Total price</label>
-                  <div class="text-large"><strong>{{Cart::total()}}</strong></div>
+                  <div class="text-large"><strong>{{number_format(Cart::subtotal() / 100 ,2 ) }} €</strong></div>
                 </div>
               </div>
             </div>
