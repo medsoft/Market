@@ -15,7 +15,15 @@ Route::get('/', function () {
     return view('welcome');
 });
 /* Products routers  */
+
 Route::get('/boutique', 'ProductController@index')->name('products.index');
 Route::get('/boutique/{slug}','ProductController@show')->name('products.show');
     
+//RoutesCart
 
+Route::post('/panier/ajouter','CartController@store' )->name('cart.store') ; 
+Route::get('/panier', 'CartController@index')->name('cart.index') ; 
+Route::post('/panier/{rowId}', 'CartController@destroy')->name('cart.destroy');
+Route::get('/viderPanier', function(){
+Cart::destroy();
+});
