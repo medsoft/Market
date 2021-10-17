@@ -82,36 +82,23 @@
     <a class="btn btn-lg btn-primary" href="/docs/5.1/components/navbar/" role="button">View navbar docs &raquo;</a>
   </div>
 
-  <div class="row">
-    <div class="col-md-9">
-        <h3 class="display-6">Nos produits</h3>
-        <div class="row product-container">
-          @foreach ($products as $product)
-                <div class="col-md-4" style="padding-top: 20px">              
-                    <div class="card" style="width: 15rem;">
-                      <img class="card-img-top" src="{{$product->image}}" alt="Card image cap">
-                      <div class="card-body">
-                        <h5 class="card-title">{{ substr ($product->title , 0, 8)}}</h5>
-                        <p class="card-text">{{ number_format($product->price/100 ,2)}} €</p>
-                        <p class="card-text">{{ substr ($product->subtitle , 0, 30 )}}...</p>
-                        <a href="{{route('products.show',$product->slug)}}" class="btn btn-primary btn-sm">details</a>
-                      </div>
-                    </div>
-                </div>
-           @endforeach      
-        </div>
-    </div>
+
+<div class="row" style="padding-top: 50px">
     <div class="col-md-3">
-      <h3 class="display-6">Filtrer</h3>
-   </div>
-
-</div>
-
+      <img class="img-fluid" src="{{$product->image}}" alt="">
+    </div>
+    <div class="col-md-9">
+      <h3 class="my-3">{{$product->title}}</h3>
+      <p>{{$product->description}}</p>
+      <h3 class="my-3">{{ number_format($product->price/100 ,2)}} €</h3>
+      <a href="#" class="btn btn-primary btn-sm">Ajouter au panier</a>
+    </div>
+  </div>
 </main>
 
 
-    <script src="/docs/5.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+<script src="/docs/5.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
 
-      
-  </body>
+  
+</body>
 </html>

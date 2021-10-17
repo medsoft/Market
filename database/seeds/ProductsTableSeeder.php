@@ -14,12 +14,12 @@ class ProductsTableSeeder extends Seeder
         $faker = Faker\Factory::create();
         for ($i=0; $i < 30 ; $i++) { 
            Product::create([
-            'title'=>  $faker->sentence(15),
+            'title'=>  $faker->sentence(5),
             'slug'=>  $faker->slug,
-            'subtitle'=>  $faker->sentence(15),
+            'subtitle'=>  $faker->sentence(7),
             'description'=>  $faker->text,
             'price'=>  $faker->numberBetween(15, 30) * 100 ,
-            'image'=>  'https://via.placeholder.com/200x250'
+            'image'=>  'https://via.placeholder.com/229x180'
            ]);
         }
     }
