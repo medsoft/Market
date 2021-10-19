@@ -27,3 +27,9 @@ Route::post('/panier/{rowId}', 'CartController@destroy')->name('cart.destroy');
 Route::get('/viderPanier', function(){
 Cart::destroy();
 });
+
+//Checkout routes 
+
+Route::get('/paiements' , 'CheckoutController@index')->name('checkout.index');
+
+
